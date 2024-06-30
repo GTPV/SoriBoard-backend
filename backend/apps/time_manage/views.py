@@ -6,21 +6,26 @@ from django.shortcuts import get_object_or_404
 from .models import *
 from .serializers import *
 
+
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
 
 class SemesterViewSet(viewsets.ModelViewSet):
     queryset = Semester.objects.all()
     serializer_class = SemesterSerializer
 
+
 class TimetableViewSet(viewsets.ModelViewSet):
     queryset = Timetable.objects.all()
     serializer_class = TimetableSerializer
 
+
 class TimetableUnitViewSet(viewsets.ModelViewSet):
     queryset = TimetableUnit.objects.all()
     serializer_class = TimetableUnitSerializer
+
 
 class TimeInfoViewSet(viewsets.ViewSet):
     def list(self, request):
